@@ -13,19 +13,19 @@ exports.generate = async (req, res) => {
   try {
     if (Object.keys(req.body).length == 0)
       return res
-        .status(400)
+        .status(200)
         .send({ status: false, message: "💪 Body can't be empty 😒" });
 
     let realUrl = req.body.url.trim();
     if (!realUrl)
       return res
-        .status(400)
+        .status(200)
         .send({ status: false, message: "Enter a link to shorten 🤏" });
 
-    if (!urlRegex.test(realUrl))
-      return res
-        .status(400)
-        .send({ status: false, message: "Please enter a valid url 🌐" });
+    // if (!urlRegex.test(realUrl))
+    //   return res
+    //     .status(400)
+    //     .send({ status: false, message: "Please enter a valid url 🌐" });
 
     let sameUrl = await Model.findOne({ longUrl: realUrl }).select({
       _id: 0,
@@ -46,7 +46,7 @@ exports.generate = async (req, res) => {
       code += char.charAt(Math.floor(Math.random() * char.length));
     }
 
-    let newUrl = `localhost:3000/${code}`;
+    let newUrl = `localhost:6969/${code}`;
 
     let urlData = {
       urlCode: code,
