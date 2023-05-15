@@ -1,38 +1,108 @@
 .Home {
     // border: solid 1px red;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem;
     font-family: 'Ramabhadra', sans-serif;
     font-size: 2rem;
-    background: #0b7bc5;
     color: #fdd721;
+    height: fit-content;
+    // margin-bottom: 5rem;
 
-    & .heading {
-        
+    & .left {
+        width: 50%;
+        padding: 1rem;
+
+        & h1 {
+            margin-top: 0;
+            padding-left: 1rem;
+            color: #0b7bc5;
+        }
+
+        & p {
+            font-size: 1.3rem;
+            padding: 1rem;
+        }
+
+        & div {
+            border: solid;
+            width: 50%;
+            margin-left: 1rem;
+        }
     }
 
-    & form {
+    & .right {
+        background: #0b7bc5;
+        width: 50%;
+        height: 35rem;
         display: flex;
-        justify-content: space-around;
-        // border: solid 1px red;
-        width: 100%;
-        font-weight: bolder;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 2rem;
 
-        &>* {
-            margin: 1rem;
+        & .heading {
+            text-align: left;
+            width: 100%;
+            margin-top: .2rem;
+            // font-size: 3rem;
+            line-height: 5rem;
         }
 
-        & input {
-            width: 60%;
+        & form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            // border: solid 1px red;
+            width: 100%;
+            font-weight: bolder;
+
+            & label {
+                margin: 0 0 1rem .5rem;
+            }
+
+            & div {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                border: solid;
+                height: 3rem;
+                border-radius: 50px;
+
+                & input {
+                    width: 70%;
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                    padding-left: 1rem;
+                }
+
+                & button {
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                    width: 30%;
+                    font-family: 'Ramabhadra', sans-serif;
+                    font-size: 1rem;
+                }
+            }
+
+        }
+
+        & p {
+            width: 100%;
+            margin: 2rem 0 1rem .5rem;
+            font-weight: bolder;
+        }
+
+        & a {
+            width: 100%;
+            // border: solid;
+            margin: 0 2rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: white;
         }
     }
 
-    & a {
-        margin: 2rem;
-        font-size: 2rem;
-        text-decoration: none;
-    }
+
 }
