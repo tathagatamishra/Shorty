@@ -1,0 +1,38 @@
+.Home {
+    // border: solid 1px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Ramabhadra', sans-serif;
+    font-size: 2rem;
+    background: #0b7bc5;
+    color: #fdd721;
+
+    & .heading {
+        
+    }
+
+    & form {
+        display: flex;
+        justify-content: space-around;
+        // border: solid 1px red;
+        width: 100%;
+        font-weight: bolder;
+
+        &>* {
+            margin: 1rem;
+        }
+
+        & input {
+            width: 60%;
+        }
+    }
+
+    & a {
+        margin: 2rem;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+}

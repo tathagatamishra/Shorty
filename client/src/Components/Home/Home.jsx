@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import "./Home.scss"
 
 export default function Home() {
   const [urlObject, setUrlObject] = useState({});
@@ -24,7 +25,9 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="Home">
+      <div className="heading"><h1>Showrty</h1></div>
+      
       <form className="" onSubmit={generate}>
         <label className="">Long URL</label>
         <input className="" type="text" required />

@@ -2,10 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-const { generate, redirect } = require("../controller/controller");
+const { generate, redirectUrl } = require("../controller/controller");
 
 router.post("/generate", generate);
 
-router.get("/:urlCode", redirect);
+router.get("/gg/:urlCode", redirectUrl);
 
 module.exports = router;

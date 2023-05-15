@@ -62,13 +62,13 @@ exports.generate = async (req, res) => {
   }
 };
 
-exports.redirect = async (req, res) => {
+exports.redirectUrl = async (req, res) => {
   try {
     let code = req.params.urlCode;
 
-    let cacheData = await redisClient.get(code);
+    // let cacheData = await redisClient.get(code);
 
-    if (cacheData) return res.status(302).redirect(cacheData);
+    // if (cacheData) return res.status(302).redirect(cacheData);
 
     let urlData = await Model.findOne({ urlCode: code }).select({
       longUrl: 1,
@@ -83,12 +83,13 @@ exports.redirect = async (req, res) => {
 
     let longUrl = urlData.longUrl;
 
-    await redisClient.set(code, longUrl, {
-      EX: 10,
-      NX: true,
-    });
+    // await redisClient.set(code, longUrl, {
+    //   EX: 10,
+    //   NX: true,
+    // });
 
     return res.status(302).redirect(longUrl);
+
   } catch (error) {
     res.status(500).send({ status: false, message: error.message });
   }

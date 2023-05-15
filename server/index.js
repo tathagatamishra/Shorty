@@ -9,12 +9,12 @@ const app = express();
 
 app.use(cors())
 app.use(express.json());
-// app.use(router)
+app.use(router)
 
 
-app.use("/", router, (_, res) =>
-  res.status(404).send({ status: false, message: "Url not found !!!" })
-);
+// app.use("/", router, (_, res) =>
+//   res.status(404).send({ status: false, message: "Url not found !!!" })
+// );
 
 const PORT = process.env.PORT || 6969
 
